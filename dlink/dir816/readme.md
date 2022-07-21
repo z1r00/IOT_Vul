@@ -71,6 +71,6 @@ li(url)
 print(info)
 ```
 
-Of course, you can write a python script for verification, just replace the above tokenid
+Of course, you can write a python script for verification, just replace the above tokenid and password
 
 Finally, you can write exp to achieve the effect of stable access to the root shell
