@@ -17,7 +17,7 @@ The picture above shows the latest firmware for this version
 
 ![](https://github.com/z1r00/IOT_Vul/blob/main/dlink/Dir816/DDNS/img/vuln1.png)
 
-We need to meet the conditions first
+The vulnerability occurs in /goform/DDNS, We need to meet the conditions first
 
 ![](https://github.com/z1r00/IOT_Vul/blob/main/dlink/Dir816/DDNS/img/vuln2.png)
 
