@@ -34,7 +34,7 @@ import base64
 li = lambda x : print('\x1b[01;38;5;214m' + x + '\x1b[0m')
 ll = lambda x : print('\x1b[01;38;5;1m' + x + '\x1b[0m')
 
-tokenid = '1804289383'
+tokenid = 'xxxx'
 
 url = 'http://192.168.0.1/goform/form2Wan.cgi'
 
