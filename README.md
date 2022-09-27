@@ -1,6 +1,7 @@
 # IOT_Vul
 
 Dlink
+
 CVE-2022-36619
 
 CVE-2022-36620
