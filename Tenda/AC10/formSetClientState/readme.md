@@ -14,7 +14,7 @@
 
 ## Vulnerability details
 
-![](https://github.com/z1r00/IOT_Vul/blob/main/Tenda/AC10/fromNatStaticSetting/img/2.png)
+![](https://github.com/z1r00/IOT_Vul/blob/main/Tenda/AC10/formSetClientState/2.png)
 
 The two variables ul_speed and dl_speed are user-controllable and will be spliced into the buff by sprintf. It is worth noting that there is no size check, which leads to a stack overflow vulnerability.
 
