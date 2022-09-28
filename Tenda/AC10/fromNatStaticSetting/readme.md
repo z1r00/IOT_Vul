@@ -14,7 +14,7 @@
 
 ## Vulnerability details
 
-![](https://github.com/z1r00/IOT_Vul/blob/main/Tenda/AC10/fromNatStaticSetting/2.png)
+![](https://github.com/z1r00/IOT_Vul/blob/main/Tenda/AC10/fromNatStaticSetting/img/2.png)
 
 /goform/fromNatStaticSetting, It can be seen that the page is controlled by the user, and will be spliced into the gotopage with sprintf. It is worth noting that there is no size limit to cause stack overflow.
 
