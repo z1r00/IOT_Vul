@@ -62,4 +62,4 @@ requests.post(target_url, headers = target_headers, data = p2, verify = False, t
 
 You can see that the router restarts
 
-![](https://github.com/z1r00/IOT_Vul/blob/main/Tenda/W6-S/SysToolReboot/img/3.png)
+![](https://github.com/z1r00/IOT_Vul/blob/main/Tenda/W6-S/SysToolReboot/3.png)
