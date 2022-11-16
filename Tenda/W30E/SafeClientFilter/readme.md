@@ -13,7 +13,7 @@
 
 ## Vulnerability details
 
-![](https://github.com/z1r00/IOT_Vul/blob/main/Tenda/W30E/SafeClientFilter/img/2.png）
+![](https://github.com/z1r00/IOT_Vul/blob/main/Tenda/W30E/SafeClientFilter/img/2.png)
 
 In /goform/SafeClientFilter, the page will be spliced into s by sprintf. It is worth noting that there is no size check, which leads to a stack overflow vulnerability.
 
